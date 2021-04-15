@@ -15,6 +15,8 @@ A 的旋转操作就是将 A 最左边的字符移动到最右边。 例如, 
 """
 
 # 实现 将A+A 然后从中查找B，进行返回
+
+
 class Solution:
     def rotateString(self, A: str, B: str) -> bool:
         return len(A) == len(B) and B in A + A
