@@ -16,21 +16,23 @@
 
 '''
 
+
 # 暴力排查出质数，取结果
 class Solution:
     def countPrimeSetBits(self, L: int, R: int) -> int:
         t = []
-        for i in range(1,21):
+        for i in range(1, 21):
             count = 0
-            for j in range(1,i+1):
-                if i%j == 0:
+            for j in range(1, i + 1):
+                if i % j == 0:
                     count += 1
                     if count > 2:
                         break
-            if  count == 2:
-                t.append(i) 
-        t2 = [i for i in range(L,R+1) if  bin(i)[2:].count('1') in t]
+            if count == 2:
+                t.append(i)
+        t2 = [i for i in range(L, R + 1) if bin(i)[2:].count('1') in t]
         return len(t2)
+
 
 # 正解
 class Solution2():
@@ -42,7 +44,7 @@ class Solution2():
         """
         res = 0
         prime = [2, 3, 5, 7, 11, 13, 17, 19]
-        for i in range(L, R+1):
+        for i in range(L, R + 1):
             if bin(i).count('1') in prime:
                 res += 1
         return res

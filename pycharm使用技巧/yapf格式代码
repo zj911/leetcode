@@ -1,0 +1,11 @@
+第一步：pip install yapf
+第二步：pycharm - Settings - Plugins -Marketplace 搜索yapf，下载yapf插件（图中第二个），安装好了之后重启pycharm
+第三步：重新打开pycharm之后，pycharm - Settings - Tools -YAPF 配置相关地址
+第四步 配置style.yapf
+注： 此文件是yapf的配置文件，在pycham内，使用code-reformat code with YAPF使用
+
+设置内容填写：
+Name： YAPF
+Program: yapf
+Parameters: --in-place -recursive -style="{based_on_style:pep8, column_limit:199}" $FilePath$
+Working directory: $ProjectFileDir$
