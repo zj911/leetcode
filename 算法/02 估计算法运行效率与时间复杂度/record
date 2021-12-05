@@ -1,0 +1,22 @@
+时间复杂度：评估算法运行效率的式子
+print('hello world')  O(1) 执行了1次
+
+for i in range(n):    O(n) 执行了n次
+    print('hello world')
+
+for i in range(n):    O(n*n) 执行了n*n次
+    for j in range(n):
+        print('hello world')
+
+for i in range(n):    O(n*n*n) 执行了n*n*n次
+    for j in range(n):
+        for k in range(n):
+            print('hello world')
+
+O(log2 n)或者O(log n)
+没有O(3)这类说法 --
+
+常见的时间复杂度：
+O(1)<O(logn)<O(N)<O(Nlogn)<O(N*N)<O(N*N logn)<O(N*N*N)
+
+

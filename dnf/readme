@@ -1,6 +1,0 @@
-# 操作键盘
-# time.sleep(2)
-# dm.KeyDownChar('right')
-# time.sleep(2)
-# dm.KeyDownChar('left')
-
