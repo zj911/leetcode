@@ -1,0 +1,31 @@
+Future是Task对象的基类
+Task对象内部await的处理基于Future对象
+
+示例1：
+async def main():
+    # 获取当前事件循环
+    loop = asyncio.get_runing_loop()
+    # 创建1个任务 -- future对象
+    fut = loop.create_future()
+    # 等待future任务最终结果，没有结果一直等待
+    await fut
+asyncio.run(main()) -- future没有结果，会一直等待
+
+
+示例2：
+async def set_after(fut):
+    await asyncio.sleep(2)
+    fut.set_result('666')
+
+async def main():
+    # 获取当前事件循环
+    loop = asyncio.get_runing_loop()
+    # 创建1个任务 -- future对象
+    fut = loop.create_future()
+    await loop.create_task(set_after(fut))
+
+    # 等待future任务最终结果，没有结果一直等待
+    data = await fut
+    print(data)
+
+asyncio.run(main()) -- future有设置数据,协程返回,不再等待

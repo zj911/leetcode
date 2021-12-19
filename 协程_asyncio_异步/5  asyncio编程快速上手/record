@@ -1,0 +1,17 @@
+协程函数：async def 函数名
+协程对象：执行 协程函数() 得到的协程对象
+async def func():
+    pass
+
+result = func()
+注意：执行协程函数创建协程对象，函数内部代码不会执行
+需要将协程对象交给事件循环来处理 -- python 3.7之前
+loop = asyncio.get_event_loop()
+loop.run_until_complete(协程对象)
+
+asyncio.run(协程对象) -- python 3.7之后
+
+
+
+
+

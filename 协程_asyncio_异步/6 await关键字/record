@@ -1,0 +1,41 @@
+await + 可等待的对象(协程对象，Future，Task对象 -- IO等待)
+示例1：
+import asyncio
+async def func():
+    print(1)
+    # IO等待2s（等待IO结束）,切换到其他任务，其他任务执行结束，再继续执行
+    response = await asyncio.sleep(2)
+    print(2)
+asyncio.run(func())
+
+示例2：
+import asyncio
+async def other():
+    print('start')
+    await asyncio.sleep(2)
+    print('end')
+    return '返回值'
+
+async def func():
+    print('执行内部code')
+    response = await other() -- 协程对象
+    print('io结束'，response)
+asyncio.run(func())
+
+示例3：
+import asyncio
+async def other():
+    print('start')
+    await asyncio.sleep(2)
+    print('end')
+    return '返回值'
+
+async def func():
+    print('执行内部code')
+    # await 等待对象的值 有返回结果再继续执行
+    response1 = await other() -- 协程对象
+    print('io结束'，response1)
+    response2 = await other() -- 协程对象
+    print('io结束'，response2)
+
+asyncio.run(func())

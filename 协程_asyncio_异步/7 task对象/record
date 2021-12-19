@@ -1,0 +1,8 @@
+在事件循环中添加多个任务
+用于并发调度协程，通过asyncio.create_task(协程对象)，这样可以让协程加入事件循环中等待被调度执行
+低级：loop.create_task() 或者 ensure_future()函数，
+示例： -- demo1.py
+
+标准写法 -- demo2.py
+
+将task_list 放置再asyncio.run()前 -- demo3.py

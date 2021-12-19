@@ -1,0 +1,11 @@
+为什么要讲：
+    1.了解异步非阻塞，asynico
+    2.框架tornado，fastapi，django 3.x asgi，aiohttp（爬虫相关）都在异步 -- 性能高
+
+如何讲解：
+    1.协程：
+    2.asyncio异步编程模块
+    3.实战案例
+
+
+
